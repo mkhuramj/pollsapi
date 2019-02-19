@@ -3,6 +3,7 @@ from rest_framework.authtoken.models import Token
 
 from rest_framework.test import APIClient, APITestCase, APIRequestFactory
 
+# from polls import apiviews
 from . import apiviews
 
 
