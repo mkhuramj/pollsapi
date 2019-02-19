@@ -9,13 +9,15 @@ class VoteSerializer(serializers.ModelSerializer):
 
 
 class ChoiceSerializer(serializers.ModelSerializer):
+    votes = VoteSerializer(many=True, required=False)
+
     class Meta:
         model = Choice
         fields = '__all__'
 
 
 class PollSerializer(serializers.ModelSerializer):
-    choice = ChoiceSerializer(many=True, read_only=True, required=False)
+    choices = ChoiceSerializer(many=True, read_only=True, required=False)
 
     class Meta:
         model = Poll
